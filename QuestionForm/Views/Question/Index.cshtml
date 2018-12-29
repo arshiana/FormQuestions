@@ -1,0 +1,51 @@
+﻿@model IEnumerable<QuestionForm.Models.Question>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Questions</h2>
+
+
+
+@foreach (var item in Model)
+{
+    <div class="quiz-group">
+        <div class="quiz-question-strong">Question @Html.DisplayFor(modelItem => item.Question_ID): @Html.DisplayFor(modelItem => item.Question1)</div>
+
+        <div class="radio">
+            <label>
+                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                @Html.DisplayFor(modelItem => item.Option_1)
+            </label>
+        </div>
+        <div class="radio">
+            <label>
+                <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                @Html.DisplayFor(modelItem => item.Option_2)
+            </label>
+        </div>
+        <div class="radio">
+            <label>
+                <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">
+                @Html.DisplayFor(modelItem => item.Option_3)
+            </label>
+        </div>
+        <div class="radio">
+            <label>
+                <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">
+                @Html.DisplayFor(modelItem => item.Option_4)
+            </label>
+        </div>
+    </div>
+    <button type="button" class="btn btn-primary" style="background-color: yellowgreen">@Html.ActionLink("Edit", "Edit", new { id = item.Question_ID }) </button>
+    
+    <button type="button" class="btn btn-primary" style="background-color: yellowgreen">@Html.ActionLink("Delete", "Delete", new { id = item.Question_ID }) </button>
+    
+    
+    
+}
+<hr />
+<button type="button" class="btn btn-primary" style="background-color: greenyellow">@Html.ActionLink("Create New", "Create")</button>
+
+
